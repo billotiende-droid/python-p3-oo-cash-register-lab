@@ -13,4 +13,11 @@ class CashRegister:
         self.items.extend([title] * quantity)
         self.last_transaction = {'amount': amount, 'count': quantity}
 
+    def apply_discount(self):
+        if self.discount > 0:
+            self.total *= (1 - self.discount / 100)
+            print(f"After the discount, the total comes to ${self.total:.0f}.")
+        else:
+            print("There is no discount to apply.")
+
    
