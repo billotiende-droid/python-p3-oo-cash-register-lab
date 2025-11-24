@@ -20,4 +20,8 @@ class CashRegister:
         else:
             print("There is no discount to apply.")
 
-   
+    def void_last_transaction(self):
+        if self.last_transaction:
+            self.total -= self.last_transaction['amount']
+            del self.items[-self.last_transaction['count']:]
+            self.last_transaction = None
